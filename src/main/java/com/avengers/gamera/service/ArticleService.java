@@ -100,7 +100,7 @@ public class ArticleService {
         article.setId(articleId);
         article.setCreatedTime(findArticle.getCreatedTime());
         article.setUpdatedTime(OffsetDateTime.now());
-        log.info("Updating article ==>> ID: " + articleId +"title: "+ articlePostDto.getTitle()+"update time: "+OffsetDateTime.now());
+        log.info("Updfdafdasfasdfasdfadsfasfsdfasdfasf: " + articleId +"title: "+ articlePostDto.getTitle()+"update time: "+OffsetDateTime.now());
         return articleMapper.articleToArticleGetDto(articleRepository.save(article));
     }
 

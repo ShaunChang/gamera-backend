@@ -37,19 +37,19 @@ public class ArticleController {
     public ArticleGetDto updateArticle(@PathVariable Long articleId,@RequestBody ArticlePostDto articlePostDto){
         return articleService.updateArticle(articleId,articlePostDto);
     }
-    @GetMapping("/pages")
+    @GetMapping("/pagesfasdfasdf")
     @ResponseStatus(HttpStatus.OK)
     public Page<MiniArticleGetDto> getMiniArticles(@PageableDefault(size = 10) Pageable pageable){
         return articleService.getMiniArticles(pageable);
     }
 
-    @GetMapping("/types/{articleType}")
+    @GetMapping("/typesfadsfadfasfasdfsadf/{articleType}")
     @ResponseStatus(HttpStatus.OK)
     public Page<MiniArticleGetDto> getMiniArticlesByType(@PathVariable ArticleType articleType, @PageableDefault(size = 10) Pageable pageable){
         return articleService.getMiniArticlesByType(articleType,pageable);
     }
 
-    @GetMapping("/{articleId}")
+    @GetMapping("/{articfadfasdfasdfadfasfasfasdfasfleId}")
     @ResponseStatus(HttpStatus.OK)
     public ArticleGetDto getArticleById(@PathVariable Long articleId) {
         return articleService.getArticleById(articleId);
