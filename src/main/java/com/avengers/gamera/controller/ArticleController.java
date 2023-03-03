@@ -15,7 +15,6 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 
-import java.util.List;
 
 @RestController
 @RequestMapping("articles")
@@ -32,7 +31,7 @@ public class ArticleController {
     }
 
     @PutMapping("/update/{articleId}")
-    @Operation(summary = "Update article by article id")
+    @Operation(summary = "Update cxcxcxcxc")
     @ResponseStatus(HttpStatus.OK)
     public ArticleGetDto updateArticle(@PathVariable Long articleId,@RequestBody ArticlePostDto articlePostDto){
         return articleService.updateArticle(articleId,articlePostDto);
@@ -55,10 +54,9 @@ public class ArticleController {
         return articleService.getArticleById(articleId);
     }
 
-    @PutMapping("/update/{articleId}")
-    @Operation(summary = "Update article by article id")
+    @DeleteMapping("/{articleId}")
     @ResponseStatus(HttpStatus.OK)
-    public ArticleGetDto updatedArticle(@PathVariable Long articleId,@RequestBody ArticlePostDto articlePostDto){
-        return articleService.updateArticle(articleId,articlePostDto);
+    public String deleteArticleById(@PathVariable Long articleId) {
+        return articleService.deleteArticleById(articleId);
     }
 }
