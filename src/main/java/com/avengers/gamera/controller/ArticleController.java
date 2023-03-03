@@ -25,40 +25,16 @@ public class ArticleController {
     private final ArticleService articleService;
 
     @PostMapping
-    @Operation(summary = "Create new article")
+    @Operation(summary = "C")
     @ResponseStatus(HttpStatus.CREATED)
     public ArticleGetDto createArticle(@RequestBody ArticlePostDto articlePostDto) {
         return articleService.createArticle(articlePostDto);
     }
 
     @PutMapping("/update/{articleId}")
-    @Operation(summary = "Update article by article id")
+    @Operation(summary = "U")
     @ResponseStatus(HttpStatus.OK)
     public ArticleGetDto updateArticle(@PathVariable Long articleId,@RequestBody ArticlePostDto articlePostDto){
-        return articleService.updateArticle(articleId,articlePostDto);
-    }
-    @GetMapping("/pagesfasdfasdf")
-    @ResponseStatus(HttpStatus.OK)
-    public Page<MiniArticleGetDto> getMiniArticles(@PageableDefault(size = 10) Pageable pageable){
-        return articleService.getMiniArticles(pageable);
-    }
-
-    @GetMapping("/typesfadsfadfasfasdfsadf/{articleType}")
-    @ResponseStatus(HttpStatus.OK)
-    public Page<MiniArticleGetDto> getMiniArticlesByType(@PathVariable ArticleType articleType, @PageableDefault(size = 10) Pageable pageable){
-        return articleService.getMiniArticlesByType(articleType,pageable);
-    }
-
-    @GetMapping("/{articfadfasdfasdfadfasfasfasdfasfleId}")
-    @ResponseStatus(HttpStatus.OK)
-    public ArticleGetDto getArticleById(@PathVariable Long articleId) {
-        return articleService.getArticleById(articleId);
-    }
-
-    @PutMapping("/update/{articleId}")
-    @Operation(summary = "Update article by article id")
-    @ResponseStatus(HttpStatus.OK)
-    public ArticleGetDto updatedArticle(@PathVariable Long articleId,@RequestBody ArticlePostDto articlePostDto){
         return articleService.updateArticle(articleId,articlePostDto);
     }
 }
