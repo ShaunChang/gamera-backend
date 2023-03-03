@@ -15,7 +15,6 @@ import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 
-import java.util.List;
 
 @RestController
 @RequestMapping("articles")
@@ -32,7 +31,7 @@ public class ArticleController {
     }
 
     @PutMapping("/update/{articleId}")
-    @Operation(summary = "Update article by article id")
+    @Operation(summary = "Update")
     @ResponseStatus(HttpStatus.OK)
     public ArticleGetDto updateArticle(@PathVariable Long articleId,@RequestBody ArticlePostDto articlePostDto){
         return articleService.updateArticle(articleId,articlePostDto);
